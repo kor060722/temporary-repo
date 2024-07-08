@@ -1,0 +1,1 @@
+{ $.eventName = AttachRolePolicy && $.userIdentity.userName = Employee && $.requestParameters.roleName = wsc2024-instance-role }
