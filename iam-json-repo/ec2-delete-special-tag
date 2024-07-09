@@ -1,0 +1,15 @@
+{
+  "Effect": "Allow",
+  "Action": "ec2:DescribeInstances",
+  "Resource": "*"
+},
+{
+  "Effect": "Allow",
+  "Action": "ec2:TerminateInstances",
+  "Resource": "*",
+  "Condition": {
+    "StringEquals": {
+      "ec2:ResourceTag/wsi-project": "developer"
+    }
+  }
+}
