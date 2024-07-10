@@ -1,0 +1,5 @@
+{  
+  "name": "$input.path('$.Item.name.S')",
+  "age": $input.path('$.Item.age.N'),
+  "country": "$input.path('$.Item.country.S')"
+}
