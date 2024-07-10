@@ -1,0 +1,8 @@
+{  
+  "TableName": "wsi-table",
+  "Item": {
+    "name": {"S": $input.json('name')},
+    "age": {"N": "$input.json('age')"},
+    "country": {"S": $input.json('country')}
+  }
+}
