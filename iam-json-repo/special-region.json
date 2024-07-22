@@ -2,14 +2,13 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Action": "e*",
+            "Action": "*",
             "Resource": "*",
             "Effect": "Allow",
             "Condition": {
                 "StringEquals": {
-                    "ec2:RequestedRegion": "ap-northeast-2"
+                    "aws:RequestedRegion": "ap-northeast-2"
                 }
             }
         }
     ]
-}
