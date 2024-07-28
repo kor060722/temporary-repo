@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluent-bit-config
+  namespace: app
+data:
+  fluent-bit.conf: |-
+    [SERVICE]
+        HTTP_Server    On
+        HTTP_Listen    0.0.0.0
+        HTTP_PORT      2020
+        Flush          1
+        Daemon         Off
+        Log_Level      debug
+
+    [INPUT]
+        Name              tail
+        Tag               service-a
+        Path              /var/log/service-a/*
+        Refresh_Interval  5
+        Rotate_Wait       10
+
+    [INPUT]
+        Name              tail
+        Tag               service-b
+        Path              /var/log/service-b/*
+        Refresh_Interval  5
+        Rotate_Wait       10
+
+    [INPUT]
+        Name              tail
+        Tag               service-c
+        Path              /var/log/service-c/*
+        Refresh_Interval  5
+        Rotate_Wait       10
+
+    [OUTPUT]
+        Name              forward
+        Match             service-a
+        Host              fluentd-svc.fluentd.svc.cluster.local
+        Port              24224
+
+    [OUTPUT]
+        Name              forward
+        Match             service-b
+        Host              fluentd-svc.fluentd.svc.cluster.local
+        Port              24224
+
+    [OUTPUT]
+        Name              forward
+        Match             service-c
+        Host              fluentd-svc.fluentd.svc.cluster.local
+        Port              24224
