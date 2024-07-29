@@ -1,8 +1,8 @@
 {
-    Version = "2012-10-17",
-    Statement = [
+    "Version" = "2012-10-17",
+    "Statement" = [
       {
-        Action   = [
+        "Action"   = [
           "s3:ListBucket",
           "s3:GetReplicationConfiguration",
           "s3:GetObjectVersionForReplication",
@@ -11,8 +11,8 @@
           "s3:GetObjectRetention",
           "s3:GetObjectLegalHold"
         ],
-        Effect   = "Allow",
-        Resource = [
+        "Effect"   = "Allow",
+        "Resource" = [
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original",
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original/*",
           "arn:aws:s3:::j-s3-bucket-lghlhhj-backup",
@@ -20,14 +20,14 @@
         ]
       },
       {
-        Action   = [
+        "Action"   = [
           "s3:ReplicateObject",
           "s3:ReplicateDelete",
           "s3:ReplicateTags",
           "s3:ObjectOwnerOverrideToBucketOwner"
         ],
-        Effect   = "Allow",
-        Resource = [
+        "Effect"   = "Allow",
+        "Resource" = [
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original/*",
           "arn:aws:s3:::j-s3-bucket-lghlhhj-backup/*"
         ]
