@@ -11,7 +11,7 @@
           "s3:GetObjectRetention",
           "s3:GetObjectLegalHold"
         ],
-        "Effect"   = "Allow",
+        "Effect": "Allow",
         "Resource" [
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original",
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original/*",
@@ -26,7 +26,7 @@
           "s3:ReplicateTags",
           "s3:ObjectOwnerOverrideToBucketOwner"
         ],
-        "Effect"   = "Allow",
+        "Effect": "Allow",
         "Resource" [
           "arn:aws:s3:::j-s3-bucket-lghlhhj-original/*",
           "arn:aws:s3:::j-s3-bucket-lghlhhj-backup/*"
