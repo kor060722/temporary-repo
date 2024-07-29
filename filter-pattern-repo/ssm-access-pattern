@@ -1,0 +1,1 @@
+{ ($.eventSource = "ssm.amazonaws.com") && ($.eventName = "DescribeSessions") && ($.requestParameters.state = "Active") && ($.requestParameters.filters[0].key = "Status") && ($.requestParameters.filters[0].value = "Connected") }
