@@ -1,0 +1,6 @@
+fields  eventTime, eventSource, requestParameters.state as state, userIdentity.accountId as accountId, requestParameters.filters.1.value as sessionId
+| filter eventSource = "ssm.amazonaws.com"
+| filter eventName = "DescribeSessions"
+| filter requestParameters.state = "Active"
+| sort eventTime desc
+| limit 20
