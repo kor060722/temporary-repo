@@ -1,0 +1,16 @@
+#set($inputRoot = $input.path('$'))
+#if($input.params('id').toLowerCase().contains('admin'))
+  #set($context.responseOverride.status = 500)
+  {
+    "err": "contains an inappropriate name"
+  }
+#else
+  {
+    "TableName": "serverless-user-table",
+    "Item": {
+      "id": {"S": "$input.params('id')"},
+      "age": {"S": "$input.params('age')"},
+      "company": {"S": "$input.params('company')"}
+    }
+  }
+#end
